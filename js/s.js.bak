@@ -1,0 +1,117 @@
+
+		function add_bookcase() {
+			for(var i=books.length-1;i>-1;i--){//for(var i=0 ;i<books.length;i++){
+			var __17mb_sid = parseInt(books[i][0]/1000);
+			$.ajax({
+				headers: {'X-CSRF-TOKEN': 'hEtGbW9KVv0VZVIHd68srAYOeEV6zOpQGG5FhmXU'},
+				type: "POST",
+				url: "/ajax.php",
+				data: { 'addmark':'1', 'aid': '{?$articleid?}', 'cid': '+books[i][1]+'},
+				dataType: "json",
+				success: function (json) {
+					hideActionsheet();
+					layer.open({
+						content: json.message
+						, skin: 'msg'
+						, time: 2
+						, end: function () {
+							if (json.error == 200) {
+								$('.collect-tip').remove();
+							}
+						}
+					});
+				}
+			});
+		}
+
+		var ReadTools = {
+			tools: {
+				content: $('.chapter-content'),
+				contentText: $('#contentText'),
+				setting: $('#setting'),
+				font: $('[data-nav=font]'),
+				setBg: $("[data-act=read]"),
+				setFs: $("[data-act=read_font]"),
+			},
+			setLocalStorage: function (key, value) {
+				if (typeof localStorage !== 'undefined') {
+					localStorage.setItem(key, value);
+				}
+			},
+			getLocalStorage: function (key) {
+				if (typeof localStorage !== 'undefined') {
+					return localStorage.getItem(key)
+				}
+				return null;
+			},
+			setTheme: function (color) {
+				$('body').removeClass().addClass(color);
+				ReadTools.setLocalStorage("SC_THEME", color);
+			},
+			setFont: function (mod) {
+				var _font_size = parseInt(ReadTools.tools.contentText.css('font-size'));
+				var _change = 2;
+				if ('plus' == mod) {
+					var _last_size = parseInt(_font_size) + _change;
+					if (_last_size >= 30) {
+						_last_size = 30;
+						layer.open({
+							content: '已经最大了'
+							, skin: 'msg'
+							, time: 1.5
+						});
+					}
+				} else {
+					var _last_size = parseInt(_font_size) - _change;
+					if (_last_size <= 12) {
+						_last_size = 12;
+						layer.open({
+							content: '已经最小了'
+							, skin: 'msg'
+							, time: 1.5
+						});
+					}
+				}
+				var _last_lh = parseInt(_last_size) + 11;//设置行高
+				var _read_fs = '{\"fs\":\"' + _last_size + '\",\"lh\":\"' + _last_lh + '\"}';
+				ReadTools.tools.contentText.css({
+					'font-size': _last_size + 'px',
+					'line-height': _last_lh + 'px'
+				})
+				ReadTools.setLocalStorage("SC_READ_FONT", _read_fs);
+			}
+		}
+		ReadTools.tools.setBg.click(function () {
+			var typeColor = $(this).attr('data-name');
+			ReadTools.setTheme(typeColor);
+		});
+		ReadTools.tools.setFs.click(function () {
+			var _mod = $(this).attr("data-name");
+			ReadTools.setFont(_mod);
+		});
+		if (ReadTools.getLocalStorage("SC_THEME") != null) {
+			var data = ReadTools.getLocalStorage("SC_THEME")
+			$('body').removeClass().addClass(data);
+			console.log(data)
+		}
+		if (ReadTools.getLocalStorage("SC_READ_FONT") != null) {
+			var data = JSON.parse(ReadTools.getLocalStorage("SC_READ_FONT"));
+			ReadTools.tools.contentText.css({
+				"font-size": data.fs + "px",
+				"line-height": data.lh + "px"
+			})
+		}
+		var $Actionsheet = $('#iosActionsheet');
+		var $Sheetmask = $('#iosMask');
+
+		function hideActionsheet() {
+			$Actionsheet.removeClass('weui-actionsheet_toggle');
+			$Sheetmask.hide();
+		}
+
+		function showActionsheet() {
+			$Actionsheet.addClass('weui-actionsheet_toggle');
+			$Sheetmask.show();
+		}
+
+		$('#iosActionsheetCancel,#iosMask').on('click', hideActionsheet)

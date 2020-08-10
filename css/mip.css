@@ -1,0 +1,366 @@
+body,ul,li,p,span,h1,h2,h3,h4,h5,h6.dl,dt,dd {
+    margin: 0px;
+    padding: 0px;
+    font-size: 12px;
+}
+
+ul,li {
+    list-style: none;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-weight: normal
+}
+
+.foot {
+    background: #1ABC9C;
+    color: #fff
+}
+
+.foot li {
+    float: left;
+    width: 33%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center
+}
+
+.foot a {
+    color: #fff;
+}
+
+.dixian {
+    color: #999;
+    text-align: center;
+    margin: 10px 0px;
+}
+
+.clear {
+    clear: both;
+}
+
+.nav {
+    height: 50px;
+    line-height: 50px;
+    background: #1ABC9C
+}
+
+.nav mip-link {
+    color: #fff;
+}
+
+.nav .sitename {
+    position: absolute;
+    top: 0px;
+    left: 10px;
+    font-size: 18px;
+    color: #fff;
+}
+
+.nav .sitename mip-img {
+    margin-top: 10px;
+}
+
+.nav .pagetitle {
+    position: absolute;
+    left: 50px;
+    right: 50px;
+    text-align: center;
+    color: #fff;
+}
+
+.nav .searchico mip-img {
+    margin-top: 10px;
+}
+
+.nav .searchico {
+    position: absolute;
+    right: 10px;
+    color: #fff;
+}
+
+.nav .searchico mip-link {
+    height: 50px;
+    width: 30px;
+}
+
+.nav .userico {
+    position: absolute;
+    right: 50px;
+    color: #fff;
+}
+
+.nav .userico mip-img {
+    margin-top: 10px;
+}
+
+.nav .userico mip-link {
+    height: 50px;
+    width: 30px;
+}
+
+body {
+    background: #eee
+}
+
+.info {
+    position: relative;
+    height: 130px;
+    background: #fff
+}
+
+.info h1 {
+    font-size: 18px;
+    color: #000;
+}
+
+.info .fm {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    width: 60px;
+}
+
+.info .article {
+    position: absolute;
+    left: 120px;
+    top: 30px;
+    height: 200px;
+    line-height: 25px;
+}
+
+.info .author,.info .lastchapter,.info .lastchapter mip-link {
+    color: #999
+}
+
+.bookcase {
+    position: relative;
+    height: 50px;
+    background: #fff;
+}
+
+.bookcase li {
+    position: absolute;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 5px;
+}
+
+.bookcase .b1 {
+    left: 3%;
+    width: 45%;
+    background: #E87646;
+}
+
+.bookcase .b1 mip-link {
+    color: #fff;
+}
+
+.bookcase .b2 {
+    left: 52%;
+    width: 45%;
+    border: 1px solid #ccc;
+}
+
+.bookcase .b2 mip-link {
+    color: #333;
+}
+
+.intro {
+    background: #fff;
+    padding: 10px;
+    padding-bottom: 20px;
+    color: #333;
+    border-bottom: 1px solid #eee;
+}
+
+.chapters {
+    background: #fff;
+    margin-top: 10px;
+    border-top: 1px solid #eee
+}
+
+.chapters p,.chapters li {
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #eee;
+    padding: 0px 10px;
+}
+
+.chapters .p1 span {
+    color: #999;
+    padding-left: 10px;
+    font-size: 10px;
+}
+
+.chapters .p2 {
+    color: #999;
+    text-align: center;
+}
+
+
+.dixian {
+    color: #999;
+    text-align: center;
+    margin: 10px 0px;
+}
+
+.clear {
+    clear: both;
+}
+
+.sort {
+    position: relative;
+    margin: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #1ABC9C
+}
+
+.sort .sorts mip-link {
+    color: #F90
+}
+
+.sort .click mip-link {
+    color: #fff;
+}
+
+.sorts {
+    margin-left: 60px;
+    color: #F90;
+}
+
+.sorts li {
+    float: left;
+    width: 25%;
+    text-align: center;
+    height: 25px;
+    line-height: 25px;
+}
+
+.sorts span {
+    display: block;
+}
+
+.sorts .click {
+    background: #FF9900;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.sortstitle {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 50px;
+    text-align: center;
+    background: #F90;
+    color: #fff;
+    height: 25px;
+    line-height: 25px;
+    border-radius: 5px;
+}
+
+.sortstitle mip-link {
+    color: #fff;
+}
+
+.topul li {
+    position: relative;
+    height: 90px;
+    border-bottom: 1px solid #ABF5A3;
+    margin: 10px;
+}
+
+.topul .top_img {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: block;
+    width: 60px;
+    border: 1px solid #ddd;
+    padding: 2px;
+}
+
+.topul h2,.topul p,.topul .author,.topul .other {
+    position: absolute;
+    color: #999;
+}
+
+.topul h2 {
+    top: 0px;
+    left: 75px;
+    height: 20px;
+    line-height: 20px;
+    overflow: hidden;
+    font-size: 14px;
+}
+
+.topul p {
+    top: 20px;
+    left: 75px;
+    height: 40px;
+    line-height: 20px;
+    overflow: hidden;
+    font-size: 12px;
+}
+
+.topul .author {
+    top: 65px;
+    left: 75px;
+    font-size: 10px;
+}
+
+.topul .author mip-link {
+    color: #999
+}
+
+.topul .other {
+    top: 65px;
+    right: 10px;
+    font-size: 10px;
+}
+
+.page {
+    border: 1px solid #1ABC9C;
+    background: #1ABC9C;
+    margin: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+    height: 30px;
+    line-height: 30px;
+    color: #fff;
+}
+
+.page mip-link {
+    color: #fff;
+}
+
+.page li {
+    float: left;
+    width: 24%;
+    text-align: center;
+}
+
+.page1 {
+    border-right: 1px solid #23e3bd;
+}
+
+.page2 {
+    border-left: 1px solid #13947b;
+    border-right: 1px solid #23e3bd
+}
+
+.page3 {
+    border-left: 1px solid #13947b;
+    border-right: 1px solid #23e3bd
+}
+
+.page4 {
+    border-left: 1px solid #13947b;
+}
+
+.pagetips {
+    text-align: center;
+    margin-bottom: 70px;
+}
